@@ -1,0 +1,15 @@
+@startuml
+
+start
+
+:Admin requests to delete user account;
+
+:LuvMatchApp retrieves user data from Database;
+
+:LuvMatchApp deletes user account from Database;
+
+:LuvMatchApp informs Admin that user account is deleted;
+
+stop
+
+@enduml
