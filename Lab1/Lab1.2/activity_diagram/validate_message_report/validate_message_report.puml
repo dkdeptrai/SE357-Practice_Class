@@ -1,0 +1,45 @@
+@startuml
+
+start
+
+:User reports message on LuvMatchApp;
+
+:LuvMatchApp stores message report in ReportDatabase;
+
+:ReportDatabase confirms report is stored;
+
+:LuvMatchApp informs User that report was submitted;
+
+if (Admin) then (yes)
+   :Admin requests to validate message reports on LuvMatchApp;
+   :LuvMatchApp retrieves pending message reports from ReportDatabase;
+   if (Message Violates) then (yes)
+      :Admin validates a report (Message Violation) on LuvMatchApp;
+      :LuvMatchApp removes message from ReportDatabase;
+      :ReportDatabase confirms message is removed;
+      :LuvMatchApp applies 7-day chat suspension to the user in ReportDatabase;
+      :ReportDatabase confirms suspension is applied;
+      :LuvMatchApp informs Admin that message was removed and suspension applied;
+   else (no)
+      :Admin validates a report (Message Not Violated) on LuvMatchApp;
+      :LuvMatchApp informs Admin that no action was taken;
+   endif
+else (Moderator)
+   :Moderator requests to validate message reports on LuvMatchApp;
+   :LuvMatchApp retrieves pending message reports from ReportDatabase;
+   if (Message Violates) then (yes)
+      :Moderator validates a report (Message Violation) on LuvMatchApp;
+      :LuvMatchApp removes message from ReportDatabase;
+      :ReportDatabase confirms message is removed;
+      :LuvMatchApp applies 7-day chat suspension to the user in ReportDatabase;
+      :ReportDatabase confirms suspension is applied;
+      :LuvMatchApp informs Moderator that message was removed and suspension applied;
+   else (no)
+      :Moderator validates a report (Message Not Violated) on LuvMatchApp;
+      :LuvMatchApp informs Moderator that no action was taken;
+   endif
+endif
+
+stop
+
+@enduml
