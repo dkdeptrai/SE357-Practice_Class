@@ -1,0 +1,28 @@
+@startuml
+
+start
+
+:User enters username/password on LoginGUI;
+
+:User taps Submit button on LoginGUI;
+
+:LoginGUI sends login request to AuthenController;
+
+:AuthenController validates the request with AuthenService;
+
+if (User found) then (yes)
+   if (Login successfully) then (yes)
+       :AuthenController informs LoginGUI that login was successful;
+       :LoginGUI redirects User to MainScreenGUI;
+   else (no)
+       :AuthenController informs LoginGUI that the password was wrong;
+       :LoginGUI informs User that the password was wrong;
+   endif
+else (no)
+   :AuthenController informs LoginGUI that the user was not found;
+   :LoginGUI informs User that the user was not found;
+endif
+
+stop
+
+@enduml
