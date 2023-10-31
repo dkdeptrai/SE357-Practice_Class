@@ -1,0 +1,17 @@
+@startuml
+
+start
+
+:Admin requests to update user account;
+
+:LuvMatchApp retrieves user data from Database;
+
+:LuvMatchApp modifies user data;
+
+:LuvMatchApp updates user data in Database;
+
+:LuvMatchApp informs Admin that user account is updated;
+
+stop
+
+@enduml

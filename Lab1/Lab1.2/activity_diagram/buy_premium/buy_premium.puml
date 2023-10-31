@@ -1,0 +1,11 @@
+@startuml
+start
+:RegularUser initiates the purchase of a premium subscription;
+:LuvMatchApp initiates payment for Premium subscription;
+if (Payment Successful) then (yes)
+  :LuvMatchApp informs RegularUser that the premium subscription was purchased successfully;
+else (no)
+  :LuvMatchApp informs RegularUser that the payment failed and to try again;
+endif
+stop
+@enduml
