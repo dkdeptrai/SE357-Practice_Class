@@ -1,0 +1,17 @@
+@startuml
+
+start
+
+:User requests to update their profile on LuvMatchApp;
+
+:User provides updated profile data on LuvMatchApp;
+
+:LuvMatchApp updates user profile data in Database;
+
+:Database confirms user profile data is updated;
+
+:LuvMatchApp informs User that profile was updated successfully;
+
+stop
+
+@enduml
