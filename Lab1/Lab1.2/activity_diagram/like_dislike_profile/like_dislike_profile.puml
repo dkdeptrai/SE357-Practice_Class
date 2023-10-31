@@ -1,0 +1,17 @@
+@startuml
+
+start
+
+:Liker likes/dislikes ProfileOwner's profile on LuvMatchApp;
+
+:LuvMatchApp updates the like/dislike status in Database;
+
+:Database confirms status update is successful;
+
+:LuvMatchApp informs Liker that Like/Dislike action was completed;
+
+:LuvMatchApp informs ProfileOwner about the like/dislike reaction;
+
+stop
+
+@enduml
