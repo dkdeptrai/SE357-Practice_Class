@@ -1,0 +1,16 @@
+@startuml
+
+start
+
+:"Premium User" requests to maintain Premium access from LuvMatchApp;
+
+:LuvMatchApp initiates payment for Premium maintenance from Payment;
+
+if (Payment Successful) then (yes)
+    :LuvMatchApp informs "Premium User" that Premium subscription is maintained;
+else (no)
+    :LuvMatchApp informs "Premium User" that payment failed and to try again;
+endif
+
+stop
+

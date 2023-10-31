@@ -1,0 +1,29 @@
+@startuml
+
+start
+
+if (Admin) then (yes)
+   :Admin requests to update user profile on LuvMatchApp;
+   :LuvMatchApp retrieves user profile from Database;
+   :LuvMatchApp updates user profile data;
+   :LuvMatchApp updates user profile in Database;
+   :Database confirms user profile is updated;
+   :LuvMatchApp informs Admin that user profile was updated successfully;
+else if (Moderator) then (yes)
+   :Moderator requests to update user profile on LuvMatchApp;
+   :LuvMatchApp retrieves user profile from Database;
+   :LuvMatchApp updates user profile data;
+   :LuvMatchApp updates user profile in Database;
+   :Database confirms user profile is updated;
+   :LuvMatchApp informs Moderator that user profile was updated successfully;
+else if (User) then (yes)
+   :User requests to update their own profile on LuvMatchApp;
+   :LuvMatchApp updates user profile data;
+   :LuvMatchApp updates user profile in Database;
+   :Database confirms user profile is updated;
+   :LuvMatchApp informs User that user profile was updated successfully;
+endif
+
+stop
+
+@enduml
