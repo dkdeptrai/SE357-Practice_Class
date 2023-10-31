@@ -1,0 +1,15 @@
+@startuml
+
+start
+
+:Admin requests to grant moderator permission from LuvMatchApp;
+
+:LuvMatchApp changes user role to Moderator in Database;
+
+:Database confirms role change is successful;
+
+:LuvMatchApp informs Admin that Moderator permission was granted successfully;
+
+stop
+
+@enduml
