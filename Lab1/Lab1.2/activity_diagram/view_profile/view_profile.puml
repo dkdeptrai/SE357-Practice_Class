@@ -1,15 +1,14 @@
 @startuml
-
 start
+:Admin: as Admin
+:Moderator: as Moderator
+:User: as User
 
-:User requests to view a user's profile on LuvMatchApp;
-
-:LuvMatchApp retrieves user profile data from Database;
-
-:Database confirms user profile data is retrieved;
-
-:LuvMatchApp displays user's profile to User;
-
+if (Admin or Moderator or User) then (yes)
+ :Requests to view user profile:
+ :Retrieve user profile:
+ :User profile retrieved:
+ :User profile displayed:
+endif
 stop
-
 @enduml
