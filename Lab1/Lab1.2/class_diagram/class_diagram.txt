@@ -94,6 +94,17 @@ class Message {
   + viewMessage()
 }
 
+class Suggestion {
+  - SuggestionID
+  - User
+  - SuggestedUser
+  - Timestamp
+  + createSuggestion()
+  + viewSuggestion()
+  + deleteSuggestion()
+}
+
+
 class Notification {
   - NotificationID
   - Sender
@@ -153,6 +164,8 @@ User "1" -- "0..*" Block : Blocks/Is Blocked
 User "1" -- "0..*" Report : Reports
 User "1" -- "0..*" Notification : Receives
 Profile "1" -- "1" Location : Located In
+
+User "1" -- "0..*" Suggestion : Receives
 
 Moderator -- Suspension : Creates
 Suspension -- User : SuspendedUser
