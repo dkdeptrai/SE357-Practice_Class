@@ -1,0 +1,23 @@
+@startuml
+
+start
+
+:User enters username/password/confirm password on LoginGUI (1);
+
+:User taps Sign up button on LoginGUI (2);
+
+:LoginGUI sends sign up request to AuthenController (3);
+
+:AuthenController validates the request with AuthenService (4);
+
+if (User not already exist (5)) then (yes)
+   :AuthenController informs LoginGUI that registration was successful (6);
+   :LoginGUI redirects User to MainScreenGUI (7);
+else (no)
+   :AuthenController informs LoginGUI that registration failed (8);
+   :LoginGUI informs User that registration failed (9);
+endif
+
+stop
+
+@enduml

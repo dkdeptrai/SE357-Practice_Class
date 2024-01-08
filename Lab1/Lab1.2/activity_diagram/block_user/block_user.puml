@@ -1,0 +1,8 @@
+@startuml
+start
+:Blocker requests to block Blockee (1);
+:LuvMatchApp stores the block action (2);
+:Database confirms the block action (3);
+:LuvMatchApp informs Blocker that the block action is completed (4);
+stop
+@enduml

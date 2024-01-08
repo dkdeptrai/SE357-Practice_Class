@@ -1,0 +1,191 @@
+@startuml
+left to right direction
+
+abstract class User {
+  - UserID: String
+  - Username: String
+  - Password: String
+  - Email: String
+  - DateOfBirth: Time
+  - Gender: Enumeration
+  - Location: Location
+  - ProfilePicture: String
+  - Description: String
+  + createUser(): void
+  + editProfile(): void
+  + uploadPhoto(): void
+  + likeProfile(): void
+  + sendMessage(): void
+  + blockUser(): void
+  + reportUser(): void
+  + receiveNotification(): void
+  + getMatches(): void
+}
+
+class Moderator {
+  - ModeratorID: String
+  - Permissions: Enumeration
+  + suspendUser(): void
+  + banUser(): void
+  + reviewReports(): void
+}
+
+class NormalUser {
+  - NormalUserID: String
+  - SubscriptionType: Enumeration
+  + upgradeSubscription(): void
+}
+
+class Suspension {
+  - SuspensionID: String
+  - SuspendedUserId: String
+  - SuspendedByID: String
+  - Reason: String
+  - StartDate: DateTime
+  - EndDate: DateTime
+}
+
+class Profile {
+  - ProfileID: String
+  - UserID: String
+  - Biography: String
+  - Interests: List<String>
+  - RelationshipStatus: Enumeration
+  + viewProfile(): void
+  + editBiography(): void
+  + updateInterests(): void
+  + changeRelationshipStatus(): void
+}
+
+class Photo {
+  - PhotoID: String
+  - ImageUrl: String
+  - Caption: String
+  - UserId: String
+  + uploadPhoto(): void
+  + addCaption(): void
+  + viewPhoto(): void
+}
+
+class Like {
+  - LikeID: String
+  - UserID: String
+  - LikedProfileID: String
+  + likeProfile(): void
+}
+
+class Match {
+  - MatchID: String
+  - User1ID: String
+  - User2ID: String
+  - MatchedDate: DateTime
+  + createMatch(): void
+  + viewMatch(): void
+}
+
+class Message {
+  - MessageID: String
+  - SenderID: String
+  - ReceiverID: String
+  - ChatroomID: String
+  - Content: String
+  - Timestamp: DateTime
+  - MessageType: Enumeration
+  + sendMessage(): void
+  + viewMessage(): void
+}
+
+class Suggestion {
+  - SuggestionID: String
+  - UserID: String
+  - SuggestedUserID: String
+  - Timestamp: DateTime
+  + createSuggestion(): void
+  + viewSuggestion(): void
+  + deleteSuggestion(): void
+}
+
+class Notification {
+  - NotificationID: String
+  - SenderID: String
+  - ReceiverID: String
+  - Content: String
+  - Timestamp: DateTime
+  + sendNotification(): void
+  + viewNotification(): void
+}
+
+class MatchNotification {
+  - MatchID: String
+  + sendMatchNotification(): void
+  + viewMatchNotification(): void
+}
+
+class MessageNotification {
+  - MessageID: String
+  + sendMessageNotification(): void
+  + viewMessageNotification(): void
+}
+
+class Block {
+  - BlockID: String
+  - BlockingUserID: String
+  - BlockedUserID: String
+  + blockUser(): void
+  + unblockUser(): void
+}
+
+class Report {
+  - ReportID: String
+  - ReportingUserID: String
+  - ReportedUserID: String
+  - Reason: String
+  - Timestamp: DateTime
+  + reportUser(): void
+  + viewReport(): void
+}
+
+class Location {
+  - LocationID: String
+  - Name: String
+  - Latitude: Double
+  - Longitude: Double
+  + getLocation(): Location
+  + setName(): void
+  + setCoordinates(): void
+  + viewLocation(): void
+}
+
+class Chatroom {
+  - ChatroomID: String
+  - User1ID: String
+  - User2ID: String
+  + sendMessage(): void
+  + receiveMessage(): void
+}
+
+User "1" -- "0..*" Chatroom : Participates In
+User "1" -- "1" Profile : Has
+User "1" -- "0..*" Photo : Has
+User "1" -- "0..*" Like : Likes
+User "1" -- "0..*" Match : Matches
+User "1" -- "0..*" Message : Sends/Receives
+User "1" -- "0..*" Block : Blocks/Is Blocked
+User "1" -- "0..*" Report : Reports
+User "1" -- "0..*" Notification : Receives
+Profile "1" -- "1" Location : Located In
+Chatroom "1" -- "0..*" Message : Contains
+User "1" -- "0..*" Suggestion : Receives
+
+Moderator -- Suspension : Creates
+Suspension -- User : SuspendedUser
+User <|-- NormalUser
+
+User <|-- Moderator
+
+MatchNotification --|> Notification
+Match "1" -- "0..*" MatchNotification : Generates
+
+MessageNotification --|> Notification
+Message "1" -- "0..*" MessageNotification : Generates
+@enduml

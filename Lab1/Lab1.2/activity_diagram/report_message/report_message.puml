@@ -1,0 +1,15 @@
+@startuml
+
+start
+
+:Reporter reports a message from Sender on LuvMatchApp (1);
+
+:LuvMatchApp stores the message report in ReportDatabase (2);
+
+:ReportDatabase confirms message report is stored (3);
+
+:LuvMatchApp informs Reporter that the report was submitte(4);
+
+stop
+
+@enduml

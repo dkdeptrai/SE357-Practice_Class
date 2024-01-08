@@ -1,0 +1,8 @@
+@startuml
+start
+ :User requests to view user profile ib LuvMatchApp (1);
+ :LuvMatchApp retrieves user profile from Database (2);
+ :Database confirms user profile is retrieved (3);
+ :LuvMatchApp displays user profile (4);
+stop
+@enduml

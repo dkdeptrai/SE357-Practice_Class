@@ -1,0 +1,15 @@
+@startuml
+
+start
+
+:User requests to search for matches from LuvMatchApp (1);
+
+:LuvMatchApp retrieves potential matches from Database (2);
+
+:Database confirms list of potential matches is retrieved (3);
+
+:LuvMatchApp displays potential matches to User (4);
+
+stop
+
+@enduml

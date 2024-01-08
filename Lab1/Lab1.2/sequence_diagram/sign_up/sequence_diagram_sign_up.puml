@@ -1,0 +1,31 @@
+@startuml
+actor User
+boundary LoginGUI
+participant AuthenController
+actor AuthenService
+boundary MainScreenGUI
+
+User -> LoginGUI: Enter username/password/confirm password
+activate LoginGUI
+User -> LoginGUI : Tap Sign up button
+
+LoginGUI -> AuthenController : Sign up
+activate AuthenController
+
+AuthenController -> AuthenService: validate
+
+alt User not already exist
+  AuthenService --> AuthenController: Register successfully
+  AuthenController --> LoginGUI: Register successfully
+  activate MainScreenGUI
+  LoginGUI -> MainScreenGUI : Redirect to Main screen
+  deactivate MainScreenGUI
+else User already exist 
+  AuthenService --> AuthenController: Register failed
+  deactivate AuthenService
+  AuthenController --> LoginGUI : Register failed
+  deactivate AuthenController
+  LoginGUI --> User : Register failed
+  deactivate LoginGUI
+end
+@enduml

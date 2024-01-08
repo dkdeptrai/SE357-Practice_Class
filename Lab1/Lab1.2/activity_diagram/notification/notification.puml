@@ -1,0 +1,8 @@
+@startuml
+start
+:User is signed in and allows receiving notifications (1);
+if (User receives new matches or new messages (2)) then (yes)
+ :User is notified via system notifications (3);
+endif
+stop
+@enduml
