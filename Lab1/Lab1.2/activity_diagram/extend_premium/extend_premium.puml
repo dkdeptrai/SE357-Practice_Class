@@ -2,14 +2,14 @@
 
 start
 
-:"Premium User" requests to maintain Premium access from LuvMatchApp;
+:"Premium User" requests to maintain Premium access from LuvMatchApp (1);
 
-:LuvMatchApp initiates payment for Premium maintenance from Payment;
+:LuvMatchApp initiates payment for Premium maintenance from Payment (2);
 
-if (Payment Successful) then (yes)
-    :LuvMatchApp informs "Premium User" that Premium subscription is maintained;
+if (Payment Successful (3)) then (yes)
+    :LuvMatchApp informs "Premium User" that Premium subscription is maintained (4);
 else (no)
-    :LuvMatchApp informs "Premium User" that payment failed and to try again;
+    :LuvMatchApp informs "Premium User" that payment failed and to try again  (5);
 endif
 
 stop

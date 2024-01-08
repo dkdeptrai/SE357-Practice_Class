@@ -2,13 +2,13 @@
 
 start
 
-:Sender composes and sends a message to Receiver on LuvMatchApp;
+:Sender composes and sends a message to Receiver on LuvMatchApp (1);
 
-:LuvMatchApp stores the message in Database;
+:LuvMatchApp stores the message in Database (2);
 
-:Database confirms message is stored;
+:Database confirms message is stored (3);
 
-:LuvMatchApp delivers the message to Receiver;
+:LuvMatchApp delivers the message to Receiver (4);
 
 stop
 

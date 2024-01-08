@@ -2,13 +2,13 @@
 
 start
 
-:Admin requests to grant moderator permission from LuvMatchApp;
+:Admin requests to grant moderator permission from LuvMatchApp (1);
 
-:LuvMatchApp changes user role to Moderator in Database;
+:LuvMatchApp changes user role to Moderator in Database (2);
 
-:Database confirms role change is successful;
+:Database confirms role change is successful (3);
 
-:LuvMatchApp informs Admin that Moderator permission was granted successfully;
+:LuvMatchApp informs Admin that Moderator permission was granted successfully (4);
 
 stop
 

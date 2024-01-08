@@ -2,13 +2,13 @@
 
 start
 
-:User initiates sign out from LuvMatchApp;
+:User initiates sign out from LuvMatchApp (1);
 
-:LuvMatchApp requests sign out from FirebaseAuth;
+:LuvMatchApp requests sign out from FirebaseAuth (2);
 
-:FirebaseAuth confirms sign out is successful;
+:FirebaseAuth confirms sign out is successful (3);
 
-:LuvMatchApp informs User that sign out was successful;
+:LuvMatchApp informs User that sign out was successful (4);
 
 stop
 

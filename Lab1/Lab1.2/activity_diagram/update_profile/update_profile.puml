@@ -2,26 +2,26 @@
 
 start
 
-if (Admin) then (yes)
-   :Admin requests to update user profile on LuvMatchApp;
-   :LuvMatchApp retrieves user profile from Database;
-   :LuvMatchApp updates user profile data;
-   :LuvMatchApp updates user profile in Database;
-   :Database confirms user profile is updated;
-   :LuvMatchApp informs Admin that user profile was updated successfully;
-else if (Moderator) then (yes)
-   :Moderator requests to update user profile on LuvMatchApp;
-   :LuvMatchApp retrieves user profile from Database;
-   :LuvMatchApp updates user profile data;
-   :LuvMatchApp updates user profile in Database;
-   :Database confirms user profile is updated;
-   :LuvMatchApp informs Moderator that user profile was updated successfully;
-else if (User) then (yes)
-   :User requests to update their own profile on LuvMatchApp;
-   :LuvMatchApp updates user profile data;
-   :LuvMatchApp updates user profile in Database;
-   :Database confirms user profile is updated;
-   :LuvMatchApp informs User that user profile was updated successfully;
+if (Admin (1)) then (yes)
+   :Admin requests to update user profile on LuvMatchApp (2);
+   :LuvMatchApp retrieves user profile from Database (3);
+   :LuvMatchApp updates user profile data (4);
+   :LuvMatchApp updates user profile in Database (5);
+   :Database confirms user profile is updated (6);
+   :LuvMatchApp informs Admin that user profile was updated successfully (7);
+else if (Moderator (8)) then (yes)
+   :Moderator requests to update user profile on LuvMatchApp (9);
+   :LuvMatchApp retrieves user profile from Database (10);
+   :LuvMatchApp updates user profile data (11);
+   :LuvMatchApp updates user profile in Database (12);
+   :Database confirms user profile is updated (13);
+   :LuvMatchApp informs Moderator that user profile was updated successfully (14);
+else if (User (15)) then (yes)
+   :User requests to update their own profile on LuvMatchApp (16);
+   :LuvMatchApp updates user profile data (17);
+   :LuvMatchApp updates user profile in Database (18);
+   :Database confirms user profile is updated (19);
+   :LuvMatchApp informs User that user profile was updated successfully (20);
 endif
 
 stop

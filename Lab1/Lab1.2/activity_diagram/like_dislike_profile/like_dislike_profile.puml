@@ -2,15 +2,15 @@
 
 start
 
-:Liker likes/dislikes ProfileOwner's profile on LuvMatchApp;
+:Liker likes/dislikes ProfileOwner's profile on LuvMatchApp (1);
 
-:LuvMatchApp updates the like/dislike status in Database;
+:LuvMatchApp updates the like/dislike status in Database (2);
 
-:Database confirms status update is successful;
+:Database confirms status update is successful (3);
 
-:LuvMatchApp informs Liker that Like/Dislike action was completed;
+:LuvMatchApp informs Liker that Like/Dislike action was completed (4);
 
-:LuvMatchApp informs ProfileOwner about the like/dislike reaction;
+:LuvMatchApp informs ProfileOwner about the like/dislike reaction (5);
 
 stop
 

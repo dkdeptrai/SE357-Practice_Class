@@ -1,14 +1,8 @@
 @startuml
 start
-:Admin: as Admin
-:Moderator: as Moderator
-:User: as User
-
-if (Admin or Moderator or User) then (yes)
- :Requests to view user profile:
- :Retrieve user profile:
- :User profile retrieved:
- :User profile displayed:
-endif
+ :User requests to view user profile ib LuvMatchApp (1);
+ :LuvMatchApp retrieves user profile from Database (2);
+ :Database confirms user profile is retrieved (3);
+ :LuvMatchApp displays user profile (4);
 stop
 @enduml

@@ -2,41 +2,41 @@
 
 start
 
-:User reports account issue on LuvMatchApp;
+:User reports account issue on LuvMatchApp (1);
 
-:LuvMatchApp stores account report in ReportDatabase;
+:LuvMatchApp stores account report in ReportDatabase (2);
 
-:ReportDatabase confirms report is stored;
+:ReportDatabase confirms report is stored (3);
 
-:LuvMatchApp informs User that report was submitted;
+:LuvMatchApp informs User that report was submitted (4);
 
-if (Admin) then (yes)
-   :Admin requests to validate account reports on LuvMatchApp;
-   :LuvMatchApp retrieves pending account reports from ReportDatabase;
-   if (Account Violated) then (yes)
-      :Admin validates a report (Account Violation) on LuvMatchApp;
-      :LuvMatchApp marks account report as violated in ReportDatabase;
-      :ReportDatabase confirms account report is marked as violated;
-      :LuvMatchApp informs Admin that account report was marked as violated;
+if (Admin (5)) then (yes)
+   :Admin requests to validate account reports on LuvMatchApp (6);
+   :LuvMatchApp retrieves pending account reports from ReportDatabase (7);
+   if (Account Violated (8)) then (yes)
+      :Admin validates a report (Account Violation) on LuvMatchApp (9);
+      :LuvMatchApp marks account report as violated in ReportDatabase (10);
+      :ReportDatabase confirms account report is marked as violated (11);
+      :LuvMatchApp informs Admin that account report was marked as violated (12);
    else (no)
-      :Admin validates a report (Account Not Violated) on LuvMatchApp;
-      :LuvMatchApp marks account report as not violated in ReportDatabase;
-      :ReportDatabase confirms account report is marked as not violated;
-      :LuvMatchApp informs Admin that account report was marked as not violated;
+      :Admin validates a report (Account Not Violated) on LuvMatchApp (13);
+      :LuvMatchApp marks account report as not violated in ReportDatabase (14);
+      :ReportDatabase confirms account report is marked as not violated (15);
+      :LuvMatchApp informs Admin that account report was marked as not violated (16);
    endif
 else (Moderator)
-   :Moderator requests to validate account reports on LuvMatchApp;
-   :LuvMatchApp retrieves pending account reports from ReportDatabase;
-   if (Account Violated) then (yes)
-      :Moderator validates a report (Account Violation) on LuvMatchApp;
-      :LuvMatchApp marks account report as violated in ReportDatabase;
-      :ReportDatabase confirms account report is marked as violated;
-      :LuvMatchApp informs Moderator that account report was marked as violated;
+   :Moderator requests to validate account reports on LuvMatchApp (17);
+   :LuvMatchApp retrieves pending account reports from ReportDatabase (18);
+   if (Account Violated (19)) then (yes)
+      :Moderator validates a report (Account Violation) on LuvMatchApp (20);
+      :LuvMatchApp marks account report as violated in ReportDatabase (21);
+      :ReportDatabase confirms account report is marked as violated (22);
+      :LuvMatchApp informs Moderator that account report was marked as violated (23);
    else (no)
-      :Moderator validates a report (Account Not Violated) on LuvMatchApp;
-      :LuvMatchApp marks account report as not violated in ReportDatabase;
-      :ReportDatabase confirms account report is marked as not violated;
-      :LuvMatchApp informs Moderator that account report was marked as not violated;
+      :Moderator validates a report (Account Not Violated) on LuvMatchApp (24);
+      :LuvMatchApp marks account report as not violated in ReportDatabase (25);
+      :ReportDatabase confirms account report is marked as not violated (26);
+      :LuvMatchApp informs Moderator that account report was marked as not violated (27);
    endif
 endif
 
