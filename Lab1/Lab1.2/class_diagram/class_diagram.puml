@@ -3,9 +3,10 @@ left to right direction
 
 abstract class User {
   - UserID: String
-  - Username: String
+  - Name: String
   - Password: String
   - Email: String
+  - PhoneNumber: String
   - DateOfBirth: Time
   - Gender: Enumeration
   - Location: Location
@@ -32,8 +33,7 @@ class Moderator {
 
 class NormalUser {
   - NormalUserID: String
-  - SubscriptionType: Enumeration
-  + upgradeSubscription(): void
+  + buySubscription(): void
 }
 
 class Suspension {
@@ -72,6 +72,13 @@ class Like {
   - UserID: String
   - LikedProfileID: String
   + likeProfile(): void
+}
+
+class Dislike {
+  - DislikeID: String
+  - UserID: String
+  - DislikedProfileID: String
+  + dislikeProfile(): void
 }
 
 class Match {
@@ -164,10 +171,21 @@ class Chatroom {
   + receiveMessage(): void
 }
 
+class Subscription {
+  - SubscriptionID: String
+  - UserID: String
+  - Price: Double
+  - PaidDate: DateTime
+  - ExpiredDate: DateTime
+  + extendSubscription(): void
+}
+
 User "1" -- "0..*" Chatroom : Participates In
+User "1" -- "0..*" Subscription : Has
 User "1" -- "1" Profile : Has
 User "1" -- "0..*" Photo : Has
 User "1" -- "0..*" Like : Likes
+User "1" -- "0..*" Dislike : Dislikes
 User "1" -- "0..*" Match : Matches
 User "1" -- "0..*" Message : Sends/Receives
 User "1" -- "0..*" Block : Blocks/Is Blocked
