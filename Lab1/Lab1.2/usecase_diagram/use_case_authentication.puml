@@ -14,23 +14,23 @@ rectangle Authentication {
   (Sign out) as signOut
 }
 
-ru --> signIn
-ru --> signUp
-ru --> forgotPassword
-ru --> changePassword
-ru --> signOut
+ru -- signIn
+ru -- signUp
+ru -- forgotPassword
+ru -- changePassword
+ru -- signOut
 
-signOut <-- vu
+signOut -- vu
 
-signIn <-- pu
-signUp <-- pu
-forgotPassword <-- pu
-changePassword <-- pu
-signOut <-- pu
+signIn -- pu
+signUp -- pu
+forgotPassword -- pu
+changePassword -- pu
+signOut -- pu
 
-mod --> signIn
-mod --> changePassword
-mod --> signOut
-signIn <-- ad
-signOut <-- ad
+mod -- signIn
+mod -- changePassword
+mod -- signOut
+signIn -- ad
+signOut -- ad
 @enduml

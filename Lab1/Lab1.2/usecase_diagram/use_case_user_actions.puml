@@ -19,28 +19,29 @@ rectangle UserActions {
   (Extend premium) as extendPremium
 }
 
-ru --> viewProfile
-ru --> updateProfile
-ru --> searchMatches
-ru --> sendMessage
-ru --> receiveMessage
-ru --> reportMessage
-ru --> reactProfile
-ru --> blockUser
-ru --> receiveNotification
-ru --> buyPremium
+ru -- viewProfile
+ru -- updateProfile
+ru -- searchMatches
+ru -- sendMessage
+ru -- receiveMessage
+ru -- reportMessage
+ru -- reactProfile
+ru -- blockUser
+ru -- receiveNotification
+ru -- buyPremium
 
-viewProfile <-- pu
-updateProfile <-- pu
-searchMatches <-- pu
-sendMessage <-- pu
-receiveMessage <-- pu
-reportMessage <-- pu
-reactProfile <-- pu
-blockUser <-- pu
-receiveNotification <-- pu
-extendPremium <-- pu
+viewProfile -- pu
+updateProfile -- pu
+searchMatches -- pu
+sendMessage -- pu
+receiveMessage -- pu
+reportMessage -- pu
+reactProfile -- pu
+blockUser -- pu
+receiveNotification -- pu
+accessPremium -- pu
+extendPremium -- pu
 
-buyPremium <-- payment
-extendPremium <-- payment
+buyPremium -- payment
+extendPremium -- payment
 @enduml

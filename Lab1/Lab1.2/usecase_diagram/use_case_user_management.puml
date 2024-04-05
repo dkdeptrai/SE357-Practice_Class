@@ -3,7 +3,7 @@
 :Admin: as ad
 
 left to right direction
-rectangle Authentication {
+rectangle Management {
   (Grant moderator permission) as grantPermission
   (Delete user account) as deleteAccount
   (Update user account) as updateAccount
@@ -13,16 +13,16 @@ rectangle Authentication {
   (Validate account report) as validateAccount
 }
 
-ad --> grantPermission
-ad --> deleteAccount
-ad --> updateAccount
-ad --> viewProfile
-ad --> updateProfile
-ad --> validateMessage
-ad --> validateAccount
+ad -- grantPermission
+ad -- deleteAccount
+ad -- updateAccount
+ad -- viewProfile
+ad -- updateProfile
+ad -- validateMessage
+ad -- validateAccount
 
-viewProfile <-- mod
-updateProfile <-- mod
-validateMessage <-- mod
-validateAccount <-- mod
+viewProfile -- mod
+updateProfile -- mod
+validateMessage -- mod
+validateAccount -- mod
 @enduml
